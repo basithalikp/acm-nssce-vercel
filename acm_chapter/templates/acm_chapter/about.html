@@ -1,0 +1,58 @@
+{% extends "acm_chapter/base.html" %}
+{% block content %}
+{% load static %}
+
+<section class="page-section about-section">
+  <section> 
+    <h1 class="page-heading gradient-text">About Us</h1>
+    <p class="page-subheading">We are NSS College of Engineering's leading organization for Computer Science and Technology. Our mission is to empower students with practical experience, industry networking opportunities, and a vibrant community of tech enthusiasts.</p>
+    <p class="page-subheading">We strive to enrich the journey of NSSCE tech students by offering a dynamic platform for learning, collaboration, and knowledge-sharing through our interactive labs and engaging presentations.</p>
+  </section> 
+    <div class="about-certificate-container">
+    <div class="certificate"><img src="{% static 'acm_chapter/images/certificate.png' %}" class="certificate-img"></div>
+    </div>
+    <div class="vision-mission-container">
+        <div class="vision-mission-card liquid-glass">
+            <h3>Our Vision</h3>
+            <p>Our vision is to build a vibrant and collaborative community where tech enthusiasts unite to innovate, develop their expertise, and promote a culture of ongoing learning and teamwork.</p>
+        </div>
+        <div class="vision-mission-card liquid-glass">
+            <h3>Our Mission</h3>
+            <p>Connecting academia with industry, our platform acts as a center for knowledge-sharing, collaboration, and innovation. We enable individuals to effectively integrate theoretical learning with real-world practice.</p>
+        </div>
+    </div>
+
+    <div class="contact-us-container">
+        <h2 class="contact-heading">Join Us</h2>
+        <button class="btn-gradient join-btn"><a href="https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=LEVEL&pay=DD">Join Now</a></button>
+        <h3 style="font-family: 'Inter';">Any concerns?</h3>
+        <div class="contact-grid">
+            {% for advisor in advisors %}
+            <div class="contact-person">
+                <h4>{{ advisor.role }}: {{ advisor.name }}</h4>
+                <a href="https://wa.me/{{ advisor.phone }}" class="contact-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                </a>
+            </div>
+            {% endfor %}
+            <div class="contact-person">
+                <h4>Chairperson: {{ chairperson.name }}</h4>
+                <a href="https://wa.me/{{ chairperson.phone }}" class="contact-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="connect-banner">
+        <h2>Connect With Us Online</h2>
+        <div class="footer-socials">
+            <a href="https://linkedin.com/placeholder" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/acmnssce/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/placeholder" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:chapter@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

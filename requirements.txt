@@ -1,0 +1,5 @@
+# acm_project/requirements.txt
+django>=5.0
+gunicorn
+whitenoise
+djangorestframework
